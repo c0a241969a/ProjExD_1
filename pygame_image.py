@@ -15,10 +15,12 @@ def main():
     kk_img = pg.transform.flip(kk_img,True,False)
     tmr = 0
     while True:
+        x = tmr%3200
         for event in pg.event.get():
             if event.type == pg.QUIT: return
-        screen.blit(bg_img, [-tmr, 0])
-        screen.blit(bg_img2, [-tmr+1600, 0])
+        screen.blit(bg_img, [-x, 0])
+        screen.blit(bg_img2, [-x+1600, 0])
+        screen.blit(bg_img, [-x+3200, 0])
         screen.blit(kk_img,[300,200])
         pg.display.update()
         tmr += 1        
